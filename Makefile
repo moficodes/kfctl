@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+SHELL := /bin/bash
 GCLOUD_PROJECT ?= kubeflow-images-public
 GOLANG_VERSION ?= 1.13.7
 GOPATH ?= $(HOME)/go
