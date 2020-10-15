@@ -8,7 +8,7 @@ metadata:
         "apiVersion": "kfdef.apps.kubeflow.org/v1",
         "kind": "KfDef",
         "metadata": {
-            "name": "kubeflow",
+            "name": "kubeflow-openaihub",
             "namespace": "kubeflow"
         },
         "spec": {
@@ -39,6 +39,15 @@ metadata:
                     }
                   },
                   "name": "istio"
+              },
+              {
+                "kustomizeConfig": {
+                  "repoRef": {
+                      "name": "manifests",
+                      "path": "stacks/ibm/application/openaihub"
+                  }
+                },
+                "name": "openaihub"
               },
               {
                   "kustomizeConfig": {
@@ -152,29 +161,11 @@ metadata:
                   "kustomizeConfig": {
                     "repoRef": {
                         "name": "manifests",
-                        "path": "stacks/ibm/application/spartakus"
-                    }
-                  },
-                  "name": "spartakus"
-              },
-              {
-                  "kustomizeConfig": {
-                    "repoRef": {
-                        "name": "manifests",
                         "path": "stacks/ibm/application/tensorboard"
                     }
                   },
                   "name": "tensorboard"
               },
-              {
-                "kustomizeConfig": {
-                  "repoRef": {
-                      "name": "manifests",
-                      "path": "stacks/ibm/application/openaihub"
-                  }
-                },
-                "name": "openaihub"
-              }
             ],
             "repos": [
               {
